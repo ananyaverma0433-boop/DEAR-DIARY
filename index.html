@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ananya's Secret Diary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Login Screen -->
+<div id="loginPage" class="center-box">
+    <h2>🔐 Private Diary</h2>
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="checkPassword()">Unlock</button>
+</div>
+
+<!-- Diary App -->
+<div id="diaryApp" class="container hidden">
+
+    <div class="top-bar">
+        <h1>🌼 Meri Daily Diary 🌼</h1>
+        <button onclick="toggleMode()">🌙</button>
+    </div>
+
+    <p id="currentDate"></p>
+
+    <textarea id="diaryText" placeholder="Aaj ka din kaisa tha... likh do yaha ✨"></textarea>
+    
+    <button class="save-btn" onclick="saveEntry()">Save Entry</button>
+
+    <h3>📖 Previous Entries</h3>
+    <div id="entries"></div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
