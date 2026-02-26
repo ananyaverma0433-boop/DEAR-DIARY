@@ -20,13 +20,16 @@ document.getElementById("currentDate").innerText = "📅 " + formattedDate;
 // Save Entry
 function saveEntry() {
     const text = document.getElementById("diaryText").value.trim();
+    const mood = document.getElementById("mood").value;
+
     if (text === "") {
-        alert("Kuch toh likho yaar ✍️");
+        alert("Kuch toh likho ✍️");
         return;
     }
 
     const entryData = {
         date: formattedDate,
+        mood: mood,
         content: text
     };
 
@@ -45,17 +48,16 @@ function loadEntries() {
 
     let entries = JSON.parse(localStorage.getItem("diaryEntries")) || [];
 
-    entries.reverse().forEach(entry => {
+    entries.slice().reverse().forEach(entry => {
         const div = document.createElement("div");
         div.classList.add("entry");
-        div.innerHTML = `<strong>${entry.date}</strong><br>${entry.content}`;
+
+        div.innerHTML = `
+            <strong>${entry.date}</strong><br>
+            <span class="mood-badge">${entry.mood}</span><br>
+            ${entry.content}
+        `;
+
         entriesDiv.appendChild(div);
     });
-}
-
-loadEntries();
-
-// Dark Mode Toggle
-function toggleMode() {
-    document.body.classList.toggle("dark-mode");
 }
