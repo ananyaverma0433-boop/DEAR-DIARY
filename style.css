@@ -86,3 +86,23 @@ textarea {
 .dark-mode .entry {
     background: #444;
 }
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.mood-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    background: #ffeaa7;
+}
+.dark-mode .mood-badge {
+    background: #555;
+}
